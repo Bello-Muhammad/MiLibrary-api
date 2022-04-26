@@ -30,7 +30,7 @@ app.use(express.static(distPath))
 
 //setting up node to use session to authenticate user
 app.use(session({
-    secret: 'thisissecret',
+    secret: process.env.SESS_SECRET,
     cookie: { maxAge: 3600000 },
     resave: true,
     saveUninitialized: true,
@@ -39,5 +39,11 @@ app.use(session({
 
 app.use(adminRouter)
 app.use(libraryRouter)
+
+app.get ('*', (req, res) => {
+    res.render('404',{
+        title: '404'
+    })
+})
 
 module.exports = app
