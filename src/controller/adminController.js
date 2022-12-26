@@ -21,12 +21,18 @@ const adminSignup_post = async(req, res) => {
     }
 }
 
+const adminLogin_get = (req, res) => {
+    res.render('adminsignup&login', {
+        title: 'Admin'
+    })
+}
+
 const adminLogin_post = async (req, res) => {
     try {
         const admin = await Admin.findByCredentials(req.body.username, req.body.password)
         
         if (!admin){
-            res.redirect('/adminsignup',{
+            res.redirect('/adminlogin',{
                 e: e
             })
         }
@@ -35,7 +41,7 @@ const adminLogin_post = async (req, res) => {
         res.redirect('/adminsite')
 
     } catch (e) {
-        res.redirect('/adminsignup',{
+        res.redirect('/adminlogin',{
             e: e
         })
     } 
@@ -122,6 +128,7 @@ const itemRemoval_post = async (req, res) => {
 module.exports = {
     adminSignup_get,
     adminSignup_post,
+    adminLogin_get,
     adminLogin_post,
     admin_home,
     addingItem_get,
