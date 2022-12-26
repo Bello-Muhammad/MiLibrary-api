@@ -6,6 +6,7 @@ const adminController = require('../controller/adminController')
 
 router.get('/adminsignup', adminController.adminSignup_get);
 router.post('/adminsignup', adminController.adminSignup_post);
+router.get('/adminlogin', adminController.adminLogin_get);
 router.post('/adminlogin', adminController.adminLogin_post);
 router.get('/adminsite', adminController.admin_home);
 router.get('/adding', adminController.addingItem_get);
