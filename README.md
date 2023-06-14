@@ -32,11 +32,16 @@ Tech Stack
 
 Project Structure
 src
-  |_ controller
-  |_ db
-  |_ model
-  |_ routers
-  |_ templates(views)
+  |_ backend
+      |_ admin
+      |_ books
+      |_ config
+      |_ dto
+      |_ routes
+      |_ utils
+  |_ frontend
+      |_ dist
+      |_ partial
+      |_ view
 
-Future Features to be added:
-- storing and retrieving books from data base.
+
