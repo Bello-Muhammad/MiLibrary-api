@@ -3,6 +3,10 @@ const ResponseHandler = require('../dto/responseHandler')
 
 class BooksController {
 
+    static async getHome(req, res) {
+        res.redirect('/api/v1/books')
+    }
+
     static async getBooks(req, res) {
         try {
             const data = await BookServices.getBooks();
